@@ -29,27 +29,27 @@
     "node": ">= 1.0.0"
   },
   "dependencies": {
-    "acorn": "^5.0.3",
-    "escodegen": "^1.8.1",
-    "estraverse": "^4.2.0",
-    "html-minifier": "^3.4.3",
+    "acorn": "^7.1.0",
+    "escodegen": "^1.14.1",
+    "estraverse": "^4.3.0",
+    "html-minifier": "^4.0.0",
     "is-keyword-js": "^1.0.3",
-    "js-tokens": "^3.0.1",
-    "merge-source-map": "^1.0.3",
-    "source-map": "^0.5.6"
+    "js-tokens": "^5.0.0",
+    "merge-source-map": "^1.1.0",
+    "source-map": "^0.7.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "coveralls": "^2.13.0",
-    "eslint": "^3.19.0",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-prettier": "^2.6.2",
+    "coveralls": "^3.0.9",
+    "eslint": "^6.8.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-prettier": "^3.1.2",
     "istanbul": "^0.4.5",
-    "mocha": "^5.2.0",
+    "mocha": "^7.0.1",
     "node-noop": "^1.0.0",
-    "prettier": "^1.14.2",
-    "webpack": "^3.0.0"
+    "prettier": "^1.19.1",
+    "webpack": "^4.41.5"
   },
   "license": "MIT"
 }
