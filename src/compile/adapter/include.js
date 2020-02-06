@@ -6,14 +6,14 @@
  * @param   {Object}    options
  * @return  {string}
  */
-const include = (filename, data, blocks, options) => {
+const include = async (filename, data, blocks, options) => {
     const compile = require('../index');
     options = options.$extend({
         filename: options.resolveFilename(filename, options),
         bail: true,
         source: null
     });
-    return compile(options)(data, blocks);
+    return await (await compile(options))(data, blocks);
 };
 
 module.exports = include;

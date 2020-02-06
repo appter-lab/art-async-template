@@ -16,7 +16,7 @@ const debugRender = (error, options) => {
  * @param {?Object}       options  编译选项
  * @return {function}
  */
-const compile = (source, options = {}) => {
+const compile = async (source, options = {}) => {
     if (typeof source !== 'string') {
         options = source;
     } else {
@@ -91,9 +91,9 @@ const compile = (source, options = {}) => {
         }
     }
 
-    const render = (data, blocks) => {
+    const render = async (data, blocks) => {
         try {
-            return fn(data, blocks);
+            return await fn(data, blocks);
         } catch (error) {
             // 运行时出错以调试模式重载
             if (!options.compileDebug) {

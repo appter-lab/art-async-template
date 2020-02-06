@@ -81,7 +81,7 @@ class Compiler {
             [BLOCKS]: `arguments[1]||{}`,
             [FROM]: `null`,
             [PRINT]: `function(){var s=''.concat.apply('',arguments);${OUT}+=s;return s}`,
-            [INCLUDE]: `function(src,data){var s=${OPTIONS}.include(src,data||${DATA},arguments[2]||${BLOCKS},${OPTIONS});${OUT}+=s;return s}`,
+            [INCLUDE]: `async function(src,data){var s=await ${OPTIONS}.include(src,data||${DATA},arguments[2]||${BLOCKS},${OPTIONS});${OUT}+=s;return s}`,
             [EXTEND]: `function(from){${FROM}=from}`,
             [SLICE]: `function(c,p,s){p=${OUT};${OUT}='';c();s=${OUT};${OUT}=p+s;return s}`,
             [BLOCK]: `function(){var a=arguments,s;if(typeof a[0]==='function'){return ${SLICE}(a[0])}else if(${FROM}){if(!${BLOCKS}[a[0]]){${BLOCKS}[a[0]]=${SLICE}(a[1])}else{${OUT}+=${BLOCKS}[a[0]]}}else{s=${BLOCKS}[a[0]];if(typeof s==='string'){${OUT}+=s}else{s=${SLICE}(a[1])}return s}}`
@@ -324,7 +324,7 @@ class Compiler {
             return code.replace(/^[\t ]+|[\t ]$/g, '');
         };
 
-        stacks.push(`function(${DATA}){`);
+        stacks.push(`async function(${DATA}){`);
         stacks.push(`'use strict'`);
         stacks.push(`${DATA}=${DATA}||{}`);
         stacks.push(`var ` + context.map(({ name, value }) => `${name}=${value}`).join(`,`));
@@ -369,7 +369,7 @@ class Compiler {
 
         if (extendMode) {
             stacks.push(`${OUT}=''`);
-            stacks.push(`${INCLUDE}(${FROM},${DATA},${BLOCKS})`);
+            stacks.push(`await ${INCLUDE}(${FROM},${DATA},${BLOCKS})`);
         }
 
         stacks.push(`return ${OUT}`);
