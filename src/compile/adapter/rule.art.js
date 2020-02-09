@@ -78,7 +78,7 @@ const artRule = {
             case 'block':
                 group = artRule._split(esTokens);
                 group.shift();
-                code = `block(${group.join(',').trim()},function(){`;
+                code = `await block(${group.join(',').trim()},async function(){`;
                 break;
 
             case '/block':
@@ -100,7 +100,7 @@ const artRule = {
                     // 执行函数省略 `()` 与 `,`
                     group = artRule._split(esTokens);
                     group.shift();
-                    code = `${key}(${group.join(',')})`;
+                    code = `await ${key}(${group.join(',')})`;
                     break;
                 }
 

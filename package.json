@@ -3,14 +3,14 @@
   "typings": "index.d.ts",
   "description": "Clone of art-template with async/await support in templates.",
   "homepage": "http://github.com/appter-lab/art-async-template/",
-  "version": "4.13.2",
+  "version": "4.13.2.0",
   "keywords": [
     "template"
   ],
   "author": "appter-lab <exzod@pm.me>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/appter-lab/art-async-template.git"
+    "url": "git+https://github.com/appter-lab/art-async-template.git"
   },
   "scripts": {
     "build": "npm run build-lib && npm run build-web",
@@ -51,5 +51,13 @@
     "prettier": "^1.19.1",
     "webpack": "^4.41.5"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/appter-lab/art-async-template/issues"
+  },
+  "directories": {
+    "example": "example",
+    "lib": "lib",
+    "test": "test"
+  }
 }

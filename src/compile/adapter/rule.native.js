@@ -19,6 +19,10 @@ const nativeRule = {
             output = false;
         }
 
+        if (/^include\(.*\)$/.test(code) || /^block\(.*\)$/.test(code) || /^extend\(.*\)$/.test(code) || /^print\(.*\)$/.test(code)) {
+            code = `await ${code}`;
+        }
+
         // ejs compat: trims following newline
         // if (trimMode) {}
 
