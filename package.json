@@ -3,7 +3,7 @@
   "typings": "index.d.ts",
   "description": "Clone of art-template with async/await support in templates.",
   "homepage": "http://github.com/appter-lab/art-async-template/",
-  "version": "4.13.2.0",
+  "version": "4.13.3",
   "keywords": [
     "template"
   ],
