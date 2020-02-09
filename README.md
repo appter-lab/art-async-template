@@ -1,4 +1,4 @@
-# art-template
+# art-async-template
 
 [![NPM Version](https://img.shields.io/npm/v/art-async-template.svg)](https://npmjs.org/package/art-async-template)
 [![NPM Downloads](http://img.shields.io/npm/dm/art-async-template.svg)](https://npmjs.org/package/art-async-template)
